@@ -1,0 +1,8 @@
+# Build results
+_site/
+
+# Git
+.git/
+
+# Jekyll
+.jekyll-cache/
