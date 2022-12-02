@@ -20,8 +20,17 @@ layout: default
         <a href="https://github.com">Github</a>
       </li>
       <li class="d-flex align-items-start mb-1">
+        <a href="https://jekyllrb.com">Jekyll</a>
+      </li>
+      <li class="d-flex align-items-start mb-1">
         <a href="https://getbootstrap.com">Bootstrap</a>
       </li>
     </ul>
   </div>
 </div>
+<br />
+<ul class="posts">
+  {% for post in site.posts %}
+  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
