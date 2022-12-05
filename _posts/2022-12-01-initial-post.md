@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: default
+layoutPath: ../../../
 ---
 
 Initial Post to test Jekyll functionality
