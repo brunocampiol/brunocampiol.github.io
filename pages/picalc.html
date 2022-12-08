@@ -39,26 +39,26 @@ layoutPath: ../
     Can your browser calculate all Pi digits?
 </p>
 
-<p>
-
-</p>
-
-<form class="form-inline">
-    <div class="form-group mb-2">
-        <label for="staticDigits" class="sr-only">Number of Pi digits</label>
-        <input type="text" readonly class="form-control-plaintext" id="staticDigits" value="Number of Pi digits">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="inputDigits" class="sr-only">Digits</label>
-        <input type="number" class="form-control" id="inputDigits" placeholder="100" value="1000">
-    </div>
-    <button type="button" class="btn btn-primary mb-2">Calculate</button>
+<form>
+    <div class="row">
+        <div class="col">
+            <input type="text" readonly class="form-control-plaintext" id="staticDigits" value="# Pi digits">
+        </div>
+        <div class="col">
+            <input type="number" class="form-control" id="inputDigits" placeholder="5000" value="5000">
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary">Calculate</button>
+        </div>
+    </div>    
 </form>
 
 <div class="alert alert-danger" role="alert" style="display:none;">
 </div>
 
-<p class="responsive-subtitle">
+<br />
+
+<p>
     Result
 </p>
 
