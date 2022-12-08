@@ -36,7 +36,7 @@ layoutPath: ../
 <br />
 
 <p class="responsive-subtitle">
-    Can you browser calculate all pi digits?
+    Can your browser calculate all Pi digits?
 </p>
 
 <p>
@@ -62,7 +62,7 @@ layoutPath: ../
     Result
 </p>
 
-<p id="pi-result">
+<p id="pi-result" class="text-break">
 </p>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -88,7 +88,6 @@ layoutPath: ../
         let workerFilePath = '../assets/js/picalc/piCalculator.js';
         let workerUrl = workerCros(new URL(workerFilePath, window.location).href);
         let worker = new Worker(workerUrl);
-        //let worker = new Worker(workerUrl, { type: "module" });
 
         worker.onmessage = function (e) {
             $("#pi-result").html(e.data.PiValue);
@@ -96,8 +95,7 @@ layoutPath: ../
         worker.onerror = function (e) {
             alert('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
         };
-
-        //start the worker
+        // start worker
         worker.postMessage({
             'cmd': 'chudnovsky',
             'value': digits
@@ -110,20 +108,8 @@ layoutPath: ../
         return result;
     }
 
-    // A page can't be manipulated safely until the document is "ready."
-    // Shorthand for $(document).ready()
+    // $(document).ready()
     $(function () {
-
-        // TODO: check if worker is supported
-        //if (typeof (Worker) !== "undefined") {
-        //    // Yes! Web worker support!
-        //    // Some code.....
-        //    console.log('Supported');
-        //} else {
-        //    // Sorry! No Web Worker support..
-        //    console.log('Not today :(');
-        //}
-
         $('.btn').click(function () {
             let digits = $('#inputDigits').val();
             let alert = $('.alert-danger');

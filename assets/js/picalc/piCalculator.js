@@ -5,11 +5,7 @@
 // It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
 // The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
 // With strict mode, you can not, for example, use undeclared variables.
-//'use strict';
-
-//importScripts('../assets/js/libs/decimal/decimal.min.js');
-//importScripts('../libs/decimal/decimal.js');
-//importScripts('./decimal.min.js');
+'use strict';
 
 function workerCros(url) {
     const iss = "importScripts('" + url + "');";
@@ -41,15 +37,7 @@ function chudnovsky(digits) {
      * returns: Pi {Decimal}
      */
 
-    //let url = workerCros(new URL('../libs/decimal/decimal.js', window.location).href);
-    //let filePath = './decimal.min.js';
-    //let importUrl = new URL(self.location).href;
-    //let importUrl = new URL(filePath).href;
-    //let url = workerCros(importUrl);
-    //importScripts(url);
-    //importScripts(filePath);
-    //importScripts('../libs/decimal/decimal.js');
-
+    // https://mikemcl.github.io/decimal.js/
     importScripts('https://cdnjs.cloudflare.com/ajax/libs/decimal.js/9.0.0/decimal.min.js');
 
     Decimal.precision = digits + 2;
