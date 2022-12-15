@@ -1,0 +1,15 @@
+.blur-in-250ms {
+    animation: blur-in 250ms linear;
+}
+
+@keyframes blur-in {
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
