@@ -1,3 +1,32 @@
+/* Layout color for all pages */
+/* https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
+
+.navbar {
+    background-color: #14213D;
+}
+
+body {
+    background-color: #000000;
+}
+
+p,
+li {
+    color: #FFFFFF;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #FCA311;
+}
+
+a {
+    color: #E5E5E5;
+}
+
 /* Blur animation for logo */
 .blur-in-250ms {
     animation: blur-in 250ms linear;
@@ -21,8 +50,8 @@
     white-space: nowrap;
     width: 0;
     animation: typing;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(30, end);
+    animation-duration: 2.5s;
+    animation-timing-function: steps(60, end);
     animation-fill-mode: forwards;
 }
 
@@ -35,20 +64,3 @@
         width: 100%
     }
 }
-
-/* https: //coolors.co/palette/353535-3c6e71-ffffff-d9d9d9-284b63 */
-
-/*
-.container {
-    background-color: #D9D9D9;
-    padding: 12px;
-}
-
-.navbar {
-    background-color: #353535;
-}
-
-a.nav-link {
-    color: #3C6E71;
-}
-*/
