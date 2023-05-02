@@ -10,8 +10,14 @@ body {
 }
 
 p,
-li {
-    color: #FFFFFF;
+i,
+li,
+label {
+    color: white;
+}
+
+img {
+    background-color: white;
 }
 
 h1,
