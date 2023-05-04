@@ -18,21 +18,20 @@ layoutPath: ../
 
 
 <h1>Javascript physics engine</h1>
-
 <p>
     Still have some bugs - Have to work with resizing for mobile applications
 </p>
-
-
-
 <p>
     I've used the Box2D javascript import from C++. You can find more information here: <a
         href="http://box2d.org/">http://box2d.org/</a>
 </p>
-
 <br />
-
-<div class="card bg-dark border-secondary">
+<div class="d-lg-none">
+    <div class="alert alert-warning" role="alert">
+        <div>⚠️ <b>Attention:</b> You need a bigger display size to run the simulator</div>
+    </div>
+</div>
+<div class="card bg-dark border-secondary d-none d-lg-block">
     <h5 class="card-title text-light mx-3 mt-4">Settings</h5>
     <div class="card-body">
         <label class="radio-inline control-label">
@@ -72,7 +71,6 @@ layoutPath: ../
 <br />
 
 <script src="../assets/js/box2d/lib/prototype-1.6.0.2.js"></script>
-
 
 <script src="../assets/js/box2d/js/box2d/common/b2Settings.js"></script>
 <script src="../assets/js/box2d/js/box2d/common/math/b2Vec2.js"></script>
