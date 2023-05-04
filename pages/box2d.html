@@ -3,6 +3,8 @@ layout: default
 layoutPath: ../
 ---
 
+{% include bootstrap-icons.html %}
+
 <style>
     #canvas {
         /*
@@ -14,11 +16,14 @@ layoutPath: ../
     }
 </style>
 
+
 <h1>Javascript physics engine</h1>
 
 <p>
     Still have some bugs - Have to work with resizing for mobile applications
 </p>
+
+
 
 <p>
     I've used the Box2D javascript import from C++. You can find more information here: <a
@@ -27,51 +32,44 @@ layoutPath: ../
 
 <br />
 
-<div>
-    <p>
-        Settings
-    </p>
-    <br />
-    <label class="radio-inline control-label">
-        <i>Drop type:</i>
-    </label>
-    <label class="radio-inline"><input type="radio" value="0" name="dropType" checked="checked"> Circle</label>
-    <label class="radio-inline"><input type="radio" value="1" name="dropType"> Squares</label>
-    <hr />
-    <label class="radio-inline control-label">
-        <i>Drop quantity:</i>
-    </label>
-    <label class="radio-inline"><input type="radio" value="1" name="dropQuantity" checked="checked"> Single drop <span
-            class="badge badge-light">1</span></label>
-    <label class="radio-inline"><input type="radio" value="5" name="dropQuantity"> Multi drop <span
-            class="badge badge-light">5</span></label>
-    <label class="radio-inline"><input type="radio" value="15" name="dropQuantity"> Super drop <span
-            class="badge badge-light">15</span></label>
-    <label class="radio-inline"><input type="radio" value="35" name="dropQuantity"> Ultra drop <span
-            class="badge badge-light">35</span></label>
-    <label class="radio-inline"><input type="radio" value="50" name="dropQuantity"> Insane drop <span
-            class="badge badge-light">50</span></label>
-    <hr />
-    <label class="radio-inline control-label">
-        <i>Change World:</i>
-    </label>
-    <button type="button" class="btn btn-light btn-sm" onclick="setupNextWorld()">Next</button>
-    <br />
-    <br />
-</div>
-
-<br />
-<br />
-
-<div class="panel panel-default">
-    <div class="panel-body text-center">
-        <canvas id="canvas" class="border-dark" width="800" height="500"></canvas>
+<div class="card bg-dark border-secondary">
+    <h5 class="card-title text-light mx-3 mt-4">Settings</h5>
+    <div class="card-body">
+        <label class="radio-inline control-label">
+            <i class="bi bi-columns-gap"></i> <i>Drop type:</i>
+        </label>
+        <label class="radio-inline"><input type="radio" value="0" name="dropType" checked="checked"> Circle</label>
+        <label class="radio-inline"><input type="radio" value="1" name="dropType"> Squares</label>
+        <br />
+        <label class="radio-inline control-label">
+            <i class="bi bi-fuel-pump"></i> <i>Drop quantity:</i>
+        </label>
+        <label class="radio-inline"><input type="radio" value="1" name="dropQuantity" checked="checked"> Single drop
+            <span class="badge badge-light">1</span></label>
+        <label class="radio-inline"><input type="radio" value="5" name="dropQuantity"> Multi drop <span
+                class="badge badge-light">5</span></label>
+        <label class="radio-inline"><input type="radio" value="15" name="dropQuantity"> Super drop <span
+                class="badge badge-light">15</span></label>
+        <label class="radio-inline"><input type="radio" value="35" name="dropQuantity"> Ultra drop <span
+                class="badge badge-light">35</span></label>
+        <label class="radio-inline"><input type="radio" value="50" name="dropQuantity"> Insane drop <span
+                class="badge badge-light">50</span></label>
+        <br />
+        <label class="radio-inline control-label">
+            <i class="bi bi-globe-americas"></i> <i>Change World:</i>
+        </label>
+        <button type="button" class="btn btn-light btn-sm" onclick="setupNextWorld()">Next</button>
+        <br />
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <canvas id="canvas" class="border-dark" width="800" height="500"></canvas>
+            </div>
+        </div>
+        <br />
     </div>
 </div>
-
 <br />
-<br />
-
 
 <script src="../assets/js/box2d/lib/prototype-1.6.0.2.js"></script>
 
