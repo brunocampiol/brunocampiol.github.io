@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: default-no-js
 layoutPath: ../
 ---
 
+<!-- {% include jquery-min.html %} -->
 {% include bootstrap-icons.html %}
 
 <style>
@@ -26,9 +27,10 @@ layoutPath: ../
         href="http://box2d.org/">http://box2d.org/</a>
 </p>
 <br />
-<div class="d-lg-none">
-    <div class="alert alert-warning" role="alert">
-        <div>⚠️ <b>Attention:</b> You need a bigger display size to run the simulator</div>
+<div class="alert alert-warning d-lg-none" role="alert">
+    <div>
+        ⚠️ <b>Attention:</b> You need a bigger display size to run the simulator properly
+        <button type="button" class="btn btn-sm btn-danger">I don't care</button>
     </div>
 </div>
 <div class="card bg-dark border-secondary d-none d-lg-block">
@@ -69,6 +71,20 @@ layoutPath: ../
     </div>
 </div>
 <br />
+
+<script>
+    document.querySelectorAll('.btn-danger').forEach(function (button) {
+        button.addEventListener('click', function () {
+            document.querySelectorAll('.alert-warning').forEach(function (alert) {
+                alert.classList.remove('d-lg-none');
+                alert.classList.add('d-none');
+            });
+            document.querySelectorAll('.card').forEach(function (card) {
+                card.classList.remove('d-none');
+            });
+        });
+    });
+</script>
 
 <script src="../assets/js/box2d/lib/prototype-1.6.0.2.js"></script>
 
