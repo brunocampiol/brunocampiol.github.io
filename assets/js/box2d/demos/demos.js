@@ -1,4 +1,4 @@
-// Lates file to be loaded
+// Latest file to be loaded
 
 var initId = 0;
 var world = createWorld();
@@ -67,7 +67,6 @@ function InitializeBox2D() {
     canvasLeft = parseInt(canvasElm.style.left);
 
     // TODO: change the canva size when resizing. Make it dynamic   
-
     var canvasObject = document.getElementById("canvas");
     var canvasContext = canvasObject.getContext('2d');
     var canvasPosition = $('canvas').getBoundingClientRect();

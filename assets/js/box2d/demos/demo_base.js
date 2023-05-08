@@ -8,6 +8,7 @@ function drawWorld(world, context) {
         }
     }
 }
+
 function drawJoint(joint, context) {
     var b1 = joint.m_body1;
     var b2 = joint.m_body2;
@@ -46,6 +47,7 @@ function drawJoint(joint, context) {
     }
     context.stroke();
 }
+
 function drawShape(shape, context) {
     context.strokeStyle = '#ffffff';
     context.beginPath();
@@ -91,59 +93,59 @@ function drawShape(shape, context) {
     context.stroke();
 }
 
-// Defines the basic world
-// Loads the ground and walls
+// Defines the world base
+// Loads ground and walls
 
 function createWorld() {
-	var worldAABB = new b2AABB();
-	worldAABB.minVertex.Set(-1000, -1000);
-	worldAABB.maxVertex.Set(1000, 1000);
-	var gravity = new b2Vec2(0, 100);
-	var doSleep = true;
-	var world = new b2World(worldAABB, gravity, doSleep);
-	// set up the ground
-	createGround(world);
-	// creates the lateral walls
-	createBox(world, 0, 500, 10, 500);
-	createBox(world, 800, 500, 10, 500);
-	return world;
+    var worldAABB = new b2AABB();
+    worldAABB.minVertex.Set(-1000, -1000);
+    worldAABB.maxVertex.Set(1000, 1000);
+    var gravity = new b2Vec2(0, 100);
+    var doSleep = true;
+    var world = new b2World(worldAABB, gravity, doSleep);
+    // set up the ground
+    createGround(world);
+    // creates the lateral walls
+    createBox(world, 0, 500, 10, 500);
+    createBox(world, 800, 500, 10, 500);
+    return world;
 }
 
 function createGround(world) {
-	var groundSd = new b2BoxDef();
-	groundSd.extents.Set(100000, 10);
-	groundSd.restitution = 0.2;
-	var groundBd = new b2BodyDef();
-	groundBd.AddShape(groundSd);
-	groundBd.position.Set(-500, 500);
-	return world.CreateBody(groundBd)
+    var groundSd = new b2BoxDef();
+    groundSd.extents.Set(100000, 10);
+    groundSd.restitution = 0.2;
+    var groundBd = new b2BodyDef();
+    groundBd.AddShape(groundSd);
+    groundBd.position.Set(-500, 500);
+    return world.CreateBody(groundBd)
 }
 
 // Functions that creates the left click create
 function createBall(world, x, y, radius, restitution, friction) {
-	var ballSd = new b2CircleDef();
+    var ballSd = new b2CircleDef();
     ballSd.density = 1.0;
     ballSd.radius = radius;
     //ballSd.radius = 20;
     ballSd.restitution = restitution;
     //ballSd.restitution = 0.2; 	
     ballSd.friction = friction;
-	//ballSd.friction = 0.2;
-	var ballBd = new b2BodyDef();
-	ballBd.AddShape(ballSd);
-	ballBd.position.Set(x,y);
-	return world.CreateBody(ballBd);
+    //ballSd.friction = 0.2;
+    var ballBd = new b2BodyDef();
+    ballBd.AddShape(ballSd);
+    ballBd.position.Set(x, y);
+    return world.CreateBody(ballBd);
 }
 
 function createBox(world, x, y, width, height, fixed) {
-	if (typeof(fixed) == 'undefined') fixed = true;
-	var boxSd = new b2BoxDef();
-	if (!fixed) boxSd.density = 1.0;
-	boxSd.extents.Set(width, height);
-	var boxBd = new b2BodyDef();
-	boxBd.AddShape(boxSd);
-	boxBd.position.Set(x,y);
-	return world.CreateBody(boxBd)
+    if (typeof (fixed) == 'undefined') fixed = true;
+    var boxSd = new b2BoxDef();
+    if (!fixed) boxSd.density = 1.0;
+    boxSd.extents.Set(width, height);
+    var boxBd = new b2BodyDef();
+    boxBd.AddShape(boxSd);
+    boxBd.position.Set(x, y);
+    return world.CreateBody(boxBd)
 }
 
 var demos = {};
