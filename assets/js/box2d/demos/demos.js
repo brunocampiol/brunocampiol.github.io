@@ -93,8 +93,11 @@ function InitializeBox2D() {
             if (getDropType() == 0) {
                 createBall(world, positionX, positionY, 10, 0.2, 0.2);
             }
-            else {
+            else if (getDropType() == 1) {
                 createBox(world, positionX, positionY, 10, 10, false);
+            }
+            else {
+                createTriangle(world, positionX, positionY, 13, false);
             }
 
             //setupNextWorld();

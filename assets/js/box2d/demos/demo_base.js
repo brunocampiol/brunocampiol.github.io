@@ -137,6 +137,25 @@ function createBall(world, x, y, radius, restitution, friction) {
     return world.CreateBody(ballBd);
 }
 
+function createTriangle(world, x, y, size, fixed) {
+    // Equilateral triangle vertice formula
+    //A = (x + sqrt(3) * s / 2, y - s / 2)
+    //B = (x - sqrt(3) * s / 2, y - s / 2)
+    //C = (x, y + s)
+    var polySd = new b2PolyDef();
+    var points = [[0, 0], [size, size], [-size, size]];
+    if (typeof (fixed) == 'undefined') fixed = true;
+    if (!fixed) polySd.density = 1.0;
+    polySd.vertexCount = points.length;
+    for (var i = 0; i < points.length; i++) {
+        polySd.vertices[i].Set(points[i][0], points[i][1]);
+    }
+    var polyBd = new b2BodyDef();
+    polyBd.AddShape(polySd);
+    polyBd.position.Set(x, y);
+    return world.CreateBody(polyBd)
+}
+
 function createBox(world, x, y, width, height, fixed) {
     if (typeof (fixed) == 'undefined') fixed = true;
     var boxSd = new b2BoxDef();
