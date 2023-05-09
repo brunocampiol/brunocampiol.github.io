@@ -1,5 +1,6 @@
 // Latest file to be loaded
 
+// Glaball variables
 var initId = 0;
 var world = createWorld();
 var ctx;
@@ -7,6 +8,9 @@ var canvasWidth;
 var canvasHeight;
 var canvasTop;
 var canvasLeft;
+// mouse position
+var positionX = 0;
+var positionY = 0;
 
 function setupWorld(did) {
     if (!did) did = 0;
@@ -68,12 +72,8 @@ function InitializeBox2D() {
 
     // TODO: change the canva size when resizing. Make it dynamic   
     var canvasObject = document.getElementById("canvas");
-    var canvasContext = canvasObject.getContext('2d');
-    var canvasPosition = $('canvas').getBoundingClientRect();
-
-    // Global variables for mouse position
-    var positionX = 0;
-    var positionY = 0;
+    //var canvasContext = canvasObject.getContext('2d');
+    //var canvasPosition = $('canvas').getBoundingClientRect();
 
     // Updates the current mouse position in canvas world (box2d)
     canvasObject.addEventListener('mousemove', function (evt) {
