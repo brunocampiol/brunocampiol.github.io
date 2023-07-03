@@ -16,15 +16,22 @@ Open a new terminal and run following command
 jekyll build
 ```
 
+To include drafts in the build, use the following
+
+```bash
+jekyll build --drafts
+```
+
 Jekyll will build content and create all static items.
 Destination folder should be **_site**
 
 ## License
 
 The following directories and their contents are Copyright Bruno Campiol.
-You may not reuse anything therein without my permission:
+You may not reuse anything there without my permission:
 
 - \_posts/
+- \_drafts/
 - assets/
 
 All other directories and files are MIT Licensed.

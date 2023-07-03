@@ -1,0 +1,54 @@
+---
+layout: default
+layoutPath: ../../../
+---
+
+{% include hightlightjs.html %}
+
+<h1>Project Zomboid character backup automation</h1>
+<h2>Overview</h2>
+<p>Ever wanted to backup your character so you don't loose it? That's possible by backing up your game after you finish
+  playing it. This page helps you automate it.</p>
+<p>After exiting the game, run the script to create a 7z backup file of you character.</p>
+<h2>Requirements</h2>
+<ul>
+  <li>7zip</li>
+</ul>
+<h2>Configuration</h2>
+<p>Create a powershell script (can be in your game folder) with below content. This script will 7zip your save file.</p>
+<p>Remember to change the following parts with your particular case</p>
+<ul>
+  <li>MY_USER_IN_WINDOWS - your actual user name where zomboid save files</li>
+  <li>MY_SAVE_FILE_IN_PZ - your actual save name</li>
+</ul>
+<p>Have below code as your backup-script.ps1</p>
+<pre>
+  <code class="border">
+# Project Zomboid user saves
+$folderPath = "C:\Users\MY_USER_IN_WINDOWS\Zomboid\Saves\Sandbox\"
+
+# Name of the save to backup
+$folderName = "MY_SAVE_FILE_IN_PZ"
+
+# Target backup path
+$backupPath = $folderPath + $folderName
+
+# Define the 7z file path
+$7zFilePath = $backupPath + ".7z"
+
+# Check if the 7z file already exists
+if (Test-Path $7zFilePath) {
+Write-Output "Deleting previous 7z file: $7zFilePath"
+Remove-Item $7zFilePath
+}
+
+# Compress the folder and its contents into a 7z file
+Write-Output "Creating 7z file from folder: $backupPath"
+& "C:\Program Files\7-Zip\7z.exe" a -t7z $7zFilePath $backupPath\* -r
+
+# Waits for user confirmation
+Read-Host -Prompt "Press Enter to exit"
+  </code>
+</pre>
+
+<script>hljs.highlightAll();</script>
