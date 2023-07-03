@@ -15,7 +15,8 @@ layoutPath: ../../../
   <li>7zip</li>
 </ul>
 <h2>Configuration</h2>
-<p>Create a powershell script (can be in your game folder) with below content. This script will 7zip your save file.</p>
+<p>Usually your saves will be in C:\Users\MY_USER_IN_WINDOWS\Zomboid\Saves</p>
+<p>Create a powershell script 'lumb2backup.ps1' with below content. This script will 7zip your save file.</p>
 <p>Remember to change the following parts with your particular case</p>
 <ul>
   <li>MY_USER_IN_WINDOWS - your actual user name where zomboid save files</li>
@@ -50,5 +51,7 @@ Write-Output "Creating 7z file from folder: $backupPath"
 Read-Host -Prompt "Press Enter to exit"
   </code>
 </pre>
-
+<h2>How to use</h2>
+<p>After finish playing, run the script. It will create a .7z file having your character last play.</p>
+<p>If you die, delete the existing content in your save folder and replace with the .7z content</p>
 <script>hljs.highlightAll();</script>
