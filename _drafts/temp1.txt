@@ -1,0 +1,147 @@
+ssh -i C:\Temp\pioluser_keypair.pem pioluser@20.226.50.166
+
+
+Log in with your previously created user account:
+su steam
+
+steamcmd
+
+force_install_dir ./home/steam/l4d2/ app_update 222860
+
++login anonymous -game left4dead2 -insecure +maxplayers 4 +map c8m1_apartment -port 27015 +ip 20.226.50.166 +log on     
+
+
+https://linuxgsm.com/servers/l4d2server/
+
+
+/home/steam/
+./l4d2server start
+./l4d2server stop
+./l4d2server restart
+./l4d2server details
+
+
+l4d2 server app
+/home/steam/
+
+l4d2 server config
+/home/steam/serverfiles/left4dead2/cfg/l4d2server.cfg
+
+
+
+
+You can start app from another user. 
+I will start the gimp app from user2, while being logged in (GUI) with user 1:
+$ xhost +
+$ sudo su steam
+(enter pass)
+$ cd /home/steam/serverfiles/left4dead2/cfg/
+$ mousepad l4d2server.cfg
+
+$ gimp
+
+
+How to search files with string
+$ grep -r --include='*.txt' --include='*.cfg' "sm_hide_slots" /home/steam
+
+
+LOGO urls:
+http://i.ibb.co/vwFNWxS/banner-l4d2.jpg
+https://raw.githubusercontent.com/brunocampiol/brunocampiol.github.io/main/assets/img/banner-l4d2.jpg
+https://raw.githubusercontent.com/brunocampiol/brunocampiol.github.io/main/assets/img/banner2-l4d2.jpg
+
+
+/home/steam/serverfiles/left4dead2/host.txt
+<html>
+<body>
+<div style="background-color:black;padding:10px;text-align: center;">
+  <img src="http://i.ibb.co/vwFNWxS/banner-l4d2.jpg" />
+</div>
+</body>
+</html>
+
+
+<html>
+<head><title>Piol @gangsta L4D2 Versus</title></head>
+<body style=”margin:0px;padding:1px;background:#000000;”>
+<img src="https://raw.githubusercontent.com/brunocampiol/brunocampiol.github.io/main/assets/img/banner2-l4d2.jpg" style=”width:100%;height:100%;” />
+</body>
+</html>
+
+
+/home/steam/serverfiles/left4dead2/motd.txt
+<html>
+<body>
+<div style="background-color:black;padding-bottom:15px;">
+  <br />
+  <h1 style="color:white;text-align:center;">Seja bem vindo! Versus Vanilla Server</h1>
+  <h2 style="color:white;text-align:center;">Servidor hospedado no         
+        <span style="color: yellow;">B</span>
+        <span style="color: green;">R</span>
+        <span style="color: blue;">A</span>
+        <span style="color: yellow;">S</span>
+        <span style="color: green;">I</span>
+        <span style="color: blue;">L</span> </h2>
+  <p style="color:azure;text-align:center;">Nao seja estupido e curta o game :)</p>
+  <p style="color:azure;text-align:center;">Be nice and enjoy the game :)</p>
+  <p style="color:red;text-align:center;">Respeite o ADMIN <span style="color: yellow;">paes@gangsta</span></p>
+  <p style="color:red;text-align:center;">Respect ADMIN <span style="color: yellow;">paes@gangsta</span></p>
+</div>
+</body>
+</html>
+
+
+
+Metamod 1
+https://wiki.alliedmods.net/Installing_Metamod:Source
+
+
+Sourcemod 2
+https://wiki.alliedmods.net/Installing_SourceMod
+
+
+tar -xzf example.tar.gz
+
+
+Left 4 Dead 2 Dedicated Server Guide (Detailed)
+https://steamcommunity.com/sharedfiles/filedetails/?id=276173458
+
+
+L4D2 Plugins list
+https://www.sourcemod.net/plugins.php?cat=0&mod=6&title=&author=&description=&search=1
+
+
+// L4D2 commands
+https://steamcommunity.com/sharedfiles/filedetails/?l=portuguese&id=213591107
+
+
+// kicks a a player (use in chat)
+!kick Coach
+
+
+// adminmenu admin Displays the admin menu.
+sm_admin
+
+
+
+Blocks the Versus rematch voting panel when the entire game has finished. 
+https://forums.alliedmods.net/showthread.php?p=2682524 OK
+
+
+[L4D2] Bot Delay
+https://forums.alliedmods.net/showthread.php?t=120352 OK
+
+
+[L4D/L4D2] All Bot Teams (1.2) 
+https://forums.alliedmods.net/showthread.php?t=140347 OK
+sb_all_bot_game 1
+allow_all_bot_survivor_team 1
+sv_hibernate_when_empty 1
+
+
+Automatic Campaign Switcher
+https://forums.alliedmods.net/showthread.php?p=1463891 OK
+Player Commands
+	!mapvote - Allows any player to vote and revote for the next campaign to play
+	!mapvotes - Displays to the player the current vote winner as well as all of the current votes
+
