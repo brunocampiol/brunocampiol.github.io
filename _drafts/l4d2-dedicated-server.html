@@ -3,7 +3,7 @@ layout: default
 layoutPath: ../../../
 ---
 
-{% include hightlightjs.html %}
+<!-- {% include hightlightjs.html %} -->
 
 <h1>L4D2 2023 dedicated server tutorial</h1>
 <h2>Overview</h2>
@@ -18,7 +18,7 @@ layoutPath: ../../../
     keep you server up).
 </p>
 <p>
-<!-- TSARVAR WIDGET -->
+    <!-- TSARVAR WIDGET
 <a href="https://tsarvar.com/servers/left-4-dead-2/20.226.50.166:27015" data-tsarvarServerId="392450">Server Piol @gangsta L4D2 Versus BRAZIL</a>
 <script type="text/javascript" charset="utf-8" src="https://widget.tsarvar.com/load.js"></script>
 <script type="text/javascript">
@@ -30,38 +30,140 @@ layoutPath: ../../../
         blackMode:true
     });})('TsarvarWidgetQueue');
 </script>
-<!-- /TSARVAR WIDGET -->
+/TSARVAR WIDGET -->
 </p>
 <h2>Configuration</h2>
 <ul>
     <li>Ubuntu 20 LTS Azure VM</li>
     <li>Intel Xeon Platinum 8272CL (1)</li>
     <li>3.3GB RAM</li>
+    <li>30GB SSD</li>
 </ul>
 <h2>Setup</h2>
 <p>
     We'll cover each separately: VM and Software setup (SteamCMD, LinuxGSM and mods).
 </p>
-<pre>
-  <code class="border">
-    # Project Zomboid user saves
-    $folderPath = "C:\Users\MY_USER_IN_WINDOWS\Zomboid\Saves\Sandbox\"
-  </code>
-</pre>
 <h3>VM setup</h3>
+<h4>Create a ubuntu linux VM in Azure</h4>
 <p>
-    Lorem ipsum dolor sit amet. Et dolorum fuga rem autem dicta ut repudiandae consequatur vel quia laudantium
+    This should be straightforward. By default, only ssh connections will be available. If needed, you can install the
+    remote desktop on it and be able to have visual interface.
+    <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu">
+        https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu</a>
+</p>
+<h4>Optional: graphical interface</h4>
+<p>
+    If you want, just follow these instructions:
+    <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli">
+        https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli</a>
 </p>
 <h3>Software setup</h3>
 <h4>SteamCMD</h4>
 <p>
-    Lorem ipsum dolor sit amet. Et dolorum fuga rem autem dicta ut repudiandae consequatur vel quia laudantium
+    Steam CMD is the console version used by dedicated servers. No graphical interface. Install using following
+    instructions
+    <a href="https://developer.valvesoftware.com/wiki/SteamCMD">
+        https://developer.valvesoftware.com/wiki/SteamCMD</a>
 </p>
 <h4>LinuxGSM</h4>
 <p>
-    Lorem ipsum dolor sit amet. Et dolorum fuga rem autem dicta ut repudiandae consequatur vel quia laudantium
+    LinuxGSM is a command-line tool for quick, simple deployment of linux dedicated game servers.
+    <a href="https://linuxgsm.com/servers/l4d2server/">
+        https://linuxgsm.com/servers/l4d2server/</a>
+</p>
+<h4>Metamod and Sourcemod</h4>
+<p>
+    We'll need to install Metamod first followed by Sourcemod. These are the binaries that will enable us adding some
+    plugins to the server.
+</p>
+<p>
+    Metamod is a C++ plugin environment for Source engine games. Find the install guide here
+    <a href="https://www.sourcemm.net/">
+        https://www.sourcemm.net/</a>
+</p>
+<p>
+    Sourcemod is a server modification that depends on Metamod
+    <a href="https://www.sourcemod.net/">
+        https://www.sourcemod.net/</a>
 </p>
 <h4>Mods</h4>
 <p>
-    Lorem ipsum dolor sit amet. Et dolorum fuga rem autem dicta ut repudiandae consequatur vel quia laudantium
+    Here are the list of plugins that I've added to my server:
 </p>
+<ul>
+    <li>
+        <a href="https://forums.alliedmods.net/showthread.php?p=2682524">[L4D2] Versus Rematch Vote Block</a>
+        <ul>
+            <li>Blocks the Versus rematch voting panel when the entire game has finished</li>
+        </ul>
+    </li>
+    <li>
+        <a href="https://forums.alliedmods.net/showthread.php?t=120352">[L4D2] Bot Delay</a>
+        <ul>
+            <li>Prevents bots from rushing out of the saferoom before people have a chance to load into the game</li>
+        </ul>
+    </li>
+    <li>
+        <a href="https://forums.alliedmods.net/showthread.php?t=140347">[L4D/L4D2] All Bot Teams</a>
+        <ul>
+            <li>Keeps server running even when there are only players on one team</li>
+        </ul>
+    </li>
+    <li>
+        <a href="https://forums.alliedmods.net/showthread.php?p=1463891">[L4D2] Automatic Campaign Switcher</a>
+        <ul>
+            <li>Solves the problem of players returning to the lobby because the vote to restart a campaign was not
+                passed</li>
+        </ul>
+    </li>
+</ul>
+<h4>Server configuration</h4>
+<p>
+    Now, the last but not least important steps:
+</p>
+<ul>
+    <li>
+        Configuration file
+        <p>
+            Place this file in your <a href="../../../assets/dl/l4d2config.cfg" download>l4d2config.cfg</a> folder
+        </p>
+    </li>
+    <li>
+        Banner
+        <p>
+            You can use similar code to add a banner (top most)
+        </p>
+    </li>
+    <li>
+        Message of the day
+        <p>
+            You can extend or use your own ideas
+        </p>
+        <code>
+        <pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div style=&quot;background-color:black;padding-bottom:15px;&quot;&gt;
+&lt;br /&gt;
+&lt;h1 style=&quot;color:white;text-align:center;&quot;&gt;Seja bem vindo! Versus Vanilla Server&lt;/h1&gt;
+&lt;h2 style=&quot;color:white;text-align:center;&quot;&gt;Servidor hospedado no
+&lt;span style=&quot;color: yellow;&quot;&gt;B&lt;/span&gt;
+&lt;span style=&quot;color: green;&quot;&gt;R&lt;/span&gt;
+&lt;span style=&quot;color: blue;&quot;&gt;A&lt;/span&gt;
+&lt;span style=&quot;color: yellow;&quot;&gt;S&lt;/span&gt;
+&lt;span style=&quot;color: green;&quot;&gt;I&lt;/span&gt;
+&lt;span style=&quot;color: blue;&quot;&gt;L&lt;/span&gt;
+&lt;/h2&gt;
+&lt;p style=&quot;color:azure;text-align:center;&quot;&gt;Nao seja estupido e curta o game :)&lt;/p&gt;
+&lt;p style=&quot;color:azure;text-align:center;&quot;&gt;Be nice and enjoy the game :)&lt;/p&gt;
+&lt;p style=&quot;color:red;text-align:center;&quot;&gt;Respeite o ADMIN &lt;span style=&quot;color:
+yellow;&quot;&gt;paes@gangsta&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;color:red;text-align:center;&quot;&gt;Respect ADMIN &lt;span style=&quot;color:
+yellow;&quot;&gt;paes@gangsta&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        </code>
+    </li>
+</ul>

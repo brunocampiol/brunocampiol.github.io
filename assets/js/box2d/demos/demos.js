@@ -117,6 +117,8 @@ function InitializeBox2D() {
 
 
 // Start point for Box2D simulator
-(function () {
-    InitializeBox2D();
-})();
+InitializeBox2D();
+// TODO: review the difference here
+//(function () {
+//    InitializeBox2D();
+//})();
