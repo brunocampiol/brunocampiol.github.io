@@ -3,7 +3,8 @@ layout: default
 layoutPath: ../../../
 ---
 
-<!-- {% include hightlightjs.html %} -->
+{% include hightlightjs.html %}
+
 
 <h1>L4D2 2023 dedicated server tutorial</h1>
 <h2>Overview</h2>
@@ -50,6 +51,10 @@ layoutPath: ../../../
     remote desktop on it and be able to have visual interface.
     <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu">
         https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu</a>
+</p>
+<p>
+    Make sure TPC and UDP ports are open for the server. If you didn't change, the default port for source games is
+    27015
 </p>
 <h4>Optional: graphical interface</h4>
 <p>
@@ -131,16 +136,27 @@ layoutPath: ../../../
     <li>
         Banner
         <p>
-            You can use similar code to add a banner (top most)
+            You can use similar code to add a banner (top most). You can either enter plain text or use html.
         </p>
+        <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div style=&quot;background-color:black;padding:10px;text-align: center;&quot;&gt;
+&lt;img src=&quot;http://i.ibb.co/vwFNWxS/banner-l4d2.jpg&quot; /&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+        </pre>
     </li>
     <li>
         Message of the day
         <p>
-            You can extend or use your own ideas
+            You can extend or use your own ideas. Same as banner, use plain text or html.
         </p>
-        <code>
         <pre>
+        <code>
 &lt;html&gt;
 &lt;body&gt;
 &lt;div style=&quot;background-color:black;padding-bottom:15px;&quot;&gt;
@@ -163,7 +179,21 @@ yellow;&quot;&gt;paes@gangsta&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-        </pre>
         </code>
+        </pre>
     </li>
 </ul>
+<h2>Final notes</h2>
+<p>
+    After getting everything done, the server should be good to go live. Following are some commands for server
+    management.
+</p>
+<pre>
+    <code>
+$ ./l4d2server start
+$ ./l4d2server stop
+$ ./l4d2server restart
+$ ./l4d2server details
+    </code>
+</pre>
+<script>hljs.highlightAll();</script>
