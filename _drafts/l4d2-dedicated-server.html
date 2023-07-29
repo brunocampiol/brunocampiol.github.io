@@ -100,18 +100,21 @@ layoutPath: ../../../
         <a href="https://forums.alliedmods.net/showthread.php?p=2682524">[L4D2] Versus Rematch Vote Block</a>
         <ul>
             <li>Blocks the Versus rematch voting panel when the entire game has finished</li>
+            <li>No extra configuration needed</li>
         </ul>
     </li>
     <li>
         <a href="https://forums.alliedmods.net/showthread.php?t=120352">[L4D2] Bot Delay</a>
         <ul>
             <li>Prevents bots from rushing out of the saferoom before people have a chance to load into the game</li>
+            <li>The configuration I use is already in l4d2server.cfg</li>
         </ul>
     </li>
     <li>
         <a href="https://forums.alliedmods.net/showthread.php?t=140347">[L4D/L4D2] All Bot Teams</a>
         <ul>
             <li>Keeps server running even when there are only players on one team</li>
+            <li>Configuration is also in l4d2server.cfg</li>
         </ul>
     </li>
     <li>
@@ -119,6 +122,12 @@ layoutPath: ../../../
         <ul>
             <li>Solves the problem of players returning to the lobby because the vote to restart a campaign was not
                 passed</li>
+            <li>
+                The configuration for map list I use is as following for versus only 
+                <a href="../../../assets/dl/acs_map _list.txt" download>acs_map _list.txt</a>
+                Place it in /home/steam/serverfiles/left4dead2/addons/sourcemod/configs/
+            </li>
+            
         </ul>
     </li>
 </ul>
@@ -130,30 +139,19 @@ layoutPath: ../../../
     <li>
         Configuration file
         <p>
-            Place this file in your <a href="../../../assets/dl/l4d2config.cfg" download>l4d2config.cfg</a> folder
+            Place this file in your <a href="../../../assets/dl/l4d2server.cfg" download>l4d2server.cfg</a> folder
         </p>
     </li>
     <li>
         Banner
         <p>
-            You can use similar code to add a banner (top most). You can either enter plain text or use html.
+            Look for /home/steam/serverfiles/left4dead2/host.txt - I wasn't able to add an html so I've leaved with my name.
         </p>
-        <pre>
-        <code>
-&lt;html&gt;
-&lt;body&gt;
-&lt;div style=&quot;background-color:black;padding:10px;text-align: center;&quot;&gt;
-&lt;img src=&quot;http://i.ibb.co/vwFNWxS/banner-l4d2.jpg&quot; /&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </code>
-        </pre>
     </li>
     <li>
         Message of the day
         <p>
-            You can extend or use your own ideas. Same as banner, use plain text or html.
+            Look for /home/steam/serverfiles/left4dead2/motd.txt. You can extend or use your own ideas. Same as banner, use plain text or html.
         </p>
         <pre>
         <code>
@@ -196,4 +194,24 @@ $ ./l4d2server restart
 $ ./l4d2server details
     </code>
 </pre>
+<p>
+    Running details should return Status: STARTED as seen in the image below
+</p>
+<img src="../../../assets/img/l4d2-server-details.jpg" alt="L4D2 console saying status started">
+<p>
+    Usefull log locations:
+</p>
+<ul>
+    <li>
+        /home/steam/log/script/ -> linuxgsm logs
+    </li>
+    <li>
+        /home/steam/log/console/ -> l4d2 logs
+    </li>
+    <li>
+        /home/steam/serverfiles/left4dead2/addons/sourcemod/logs/ -> sourcemod logs
+    </li>
+</ul>
+<h2>Links</h2>
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=276173458">Left 4 Dead 2 Dedicated Server Guide (Detailed)</a>
 <script>hljs.highlightAll();</script>
