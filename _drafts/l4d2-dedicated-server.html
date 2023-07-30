@@ -19,7 +19,7 @@ layoutPath: ../../../
     keep you server up).
 </p>
 <p>
-    <!-- TSARVAR WIDGET
+<!-- TSARVAR WIDGET -->
 <a href="https://tsarvar.com/servers/left-4-dead-2/20.226.50.166:27015" data-tsarvarServerId="392450">Server Piol @gangsta L4D2 Versus BRAZIL</a>
 <script type="text/javascript" charset="utf-8" src="https://widget.tsarvar.com/load.js"></script>
 <script type="text/javascript">
@@ -31,7 +31,7 @@ layoutPath: ../../../
         blackMode:true
     });})('TsarvarWidgetQueue');
 </script>
-/TSARVAR WIDGET -->
+<!-- /TSARVAR WIDGET -->
 </p>
 <h2>Configuration</h2>
 <ul>
@@ -124,7 +124,7 @@ layoutPath: ../../../
                 passed</li>
             <li>
                 The configuration for map list I use is as following for versus only 
-                <a href="../../../assets/dl/acs_map _list.txt" download>acs_map _list.txt</a>
+                <a href="../../../assets/dl/acs_map _list.txt" download>acs_map _list.txt</a>.
                 Place it in /home/steam/serverfiles/left4dead2/addons/sourcemod/configs/
             </li>
             
@@ -181,6 +181,10 @@ yellow;&quot;&gt;paes@gangsta&lt;/span&gt;&lt;/p&gt;
         </pre>
     </li>
 </ul>
+<p>
+    Below is the final image of what a player will see when joining the game
+</p>
+<img src="../../../assets/img/l4d2-welcome.jpg" alt="L4D2 server welcome page" class="img-fluid">
 <h2>Final notes</h2>
 <p>
     After getting everything done, the server should be good to go live. Following are some commands for server
@@ -197,21 +201,31 @@ $ ./l4d2server details
 <p>
     Running details should return Status: STARTED as seen in the image below
 </p>
-<img src="../../../assets/img/l4d2-server-details.jpg" alt="L4D2 console saying status started">
+<img src="../../../assets/img/l4d2-terminal-details.jpg" alt="L4D2 console saying status started" class="img-fluid">
 <p>
-    Usefull log locations:
+    Usefull locations:
 </p>
 <ul>
     <li>
-        /home/steam/log/script/ -> linuxgsm logs
+        /home/user/serverfiles/left4dead2/cfg/l4d2server.cfg -> actual server configuration
     </li>
     <li>
-        /home/steam/log/console/ -> l4d2 logs
+        /home/user/log/script/ -> linuxgsm logs
     </li>
     <li>
-        /home/steam/serverfiles/left4dead2/addons/sourcemod/logs/ -> sourcemod logs
+        /home/user/log/console/ -> l4d2 logs
+    </li>
+    <li>
+        /home/user/serverfiles/left4dead2/addons/sourcemod/logs/ -> sourcemod logs
     </li>
 </ul>
 <h2>Links</h2>
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=276173458">Left 4 Dead 2 Dedicated Server Guide (Detailed)</a>
+<ul>
+    <li>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=276173458">Left 4 Dead 2 Dedicated Server Guide (Detailed)</a>
+    </li>
+    <li>
+        <a href="https://www.sourcemod.net/plugins.php?cat=0&mod=6&title=&author=&description=&search=1">L4D2 Plugins list</a>
+    </li>
+</ul>
 <script>hljs.highlightAll();</script>
