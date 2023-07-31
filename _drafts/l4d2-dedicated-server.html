@@ -16,22 +16,25 @@ layoutPath: ../../../
 </p>
 <p>
     In short, this will help you how to setup a vanilla versus server (with extra mods to
-    keep you server up).
+    keep the server running in VERSUS).
 </p>
 <p>
-<!-- TSARVAR WIDGET -->
-<a href="https://tsarvar.com/servers/left-4-dead-2/20.226.50.166:27015" data-tsarvarServerId="392450">Server Piol @gangsta L4D2 Versus BRAZIL</a>
-<script type="text/javascript" charset="utf-8" src="https://widget.tsarvar.com/load.js"></script>
-<script type="text/javascript">
-    (function(k){(window[k]||(window[k]=[])).push({
-        element:'*[data-tsarvarServerId="392450"]',
-        serverId:392450,
-        serverIp:'20.226.50.166',
-        serverPort:27015,
-        blackMode:true
-    });})('TsarvarWidgetQueue');
-</script>
-<!-- /TSARVAR WIDGET -->
+    <!-- TSARVAR WIDGET -->
+    <a href="https://tsarvar.com/servers/left-4-dead-2/20.226.50.166:27015" data-tsarvarServerId="392450">Server Piol
+        @gangsta L4D2 Versus BRAZIL</a>
+    <script type="text/javascript" charset="utf-8" src="https://widget.tsarvar.com/load.js"></script>
+    <script type="text/javascript">
+        (function (k) {
+            (window[k] || (window[k] = [])).push({
+                element: '*[data-tsarvarServerId="392450"]',
+                serverId: 392450,
+                serverIp: '20.226.50.166',
+                serverPort: 27015,
+                blackMode: true
+            });
+        })('TsarvarWidgetQueue');
+    </script>
+    <!-- /TSARVAR WIDGET -->
 </p>
 <h2>Configuration</h2>
 <ul>
@@ -42,7 +45,7 @@ layoutPath: ../../../
 </ul>
 <h2>Setup</h2>
 <p>
-    We'll cover each separately: VM and Software setup (SteamCMD, LinuxGSM and mods).
+    We'll cover each separately: VM and Software setup (SteamCMD, LinuxGSM and mods and server).
 </p>
 <h3>VM setup</h3>
 <h4>Create a ubuntu linux VM in Azure</h4>
@@ -56,7 +59,7 @@ layoutPath: ../../../
     Make sure TPC and UDP ports are open for the server. If you didn't change, the default port for source games is
     27015
 </p>
-<h4>Optional: graphical interface</h4>
+<h4>Optional: graphical interface for remote desktop</h4>
 <p>
     If you want, just follow these instructions:
     <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli">
@@ -123,11 +126,11 @@ layoutPath: ../../../
             <li>Solves the problem of players returning to the lobby because the vote to restart a campaign was not
                 passed</li>
             <li>
-                The configuration for map list I use is as following for versus only 
+                The configuration for map list I use is as following for versus only
                 <a href="../../../assets/dl/acs_map _list.txt" download>acs_map _list.txt</a>.
-                Place it in /home/steam/serverfiles/left4dead2/addons/sourcemod/configs/
+                Place it in /home/user/serverfiles/left4dead2/addons/sourcemod/configs/
             </li>
-            
+
         </ul>
     </li>
 </ul>
@@ -145,13 +148,15 @@ layoutPath: ../../../
     <li>
         Banner
         <p>
-            Look for /home/steam/serverfiles/left4dead2/host.txt - I wasn't able to add an html so I've leaved with my name.
+            Look for /home/user/serverfiles/left4dead2/host.txt - I wasn't able to add an html so I've leaved with my
+            name.
         </p>
     </li>
     <li>
         Message of the day
         <p>
-            Look for /home/steam/serverfiles/left4dead2/motd.txt. You can extend or use your own ideas. Same as banner, use plain text or html.
+            Look for /home/user/serverfiles/left4dead2/motd.txt. You can extend or use your own ideas. Same as banner,
+            use plain text or html.
         </p>
         <pre>
         <code>
@@ -222,10 +227,12 @@ $ ./l4d2server details
 <h2>Links</h2>
 <ul>
     <li>
-        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=276173458">Left 4 Dead 2 Dedicated Server Guide (Detailed)</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=276173458">Left 4 Dead 2 Dedicated Server Guide
+            (Detailed)</a>
     </li>
     <li>
-        <a href="https://www.sourcemod.net/plugins.php?cat=0&mod=6&title=&author=&description=&search=1">L4D2 Plugins list</a>
+        <a href="https://www.sourcemod.net/plugins.php?cat=0&mod=6&title=&author=&description=&search=1">L4D2 Plugins
+            list</a>
     </li>
 </ul>
 <script>hljs.highlightAll();</script>
