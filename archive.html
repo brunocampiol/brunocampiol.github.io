@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% include hightlightjs.html %}
+
+<style>
+    /* Text typing animation for warning on home page */
+    .typed-text {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing;
+        animation-duration: 2.5s;
+        animation-timing-function: steps(60, end);
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+</style>
+
+<h1>
+    Code Archive
+</h1>
+<p>
+    This is a page holding backups and historical examples removed from main page
+</p>
+<h2>
+    Alert Typed Text
+</h2>
+<h3>Example</h3>
+<div class="alert alert-warning" role="alert">
+    <div class="typed-text">⚠️ <b>Attention:</b> Site is under construction </div>
+</div>
+<h3>Code</h3>
+<pre>
+<code>
+&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;
+&lt;div class=&quot;typed-text&quot;&gt;⚠️ &lt;b&gt;Attention:&lt;/b&gt; Site is under construction &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<pre>
+<code>
+/* Text typing animation for warning on home page */
+.typed-text {
+overflow: hidden;
+white-space: nowrap;
+width: 0;
+animation: typing;
+animation-duration: 2.5s;
+animation-timing-function: steps(60, end);
+animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+from {
+width: 0
+}
+
+to {
+width: 100%
+}
+}
+</code>
+</pre>
