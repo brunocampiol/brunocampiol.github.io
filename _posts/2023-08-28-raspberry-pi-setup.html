@@ -14,6 +14,9 @@ layoutPath: ../../../
     electricity costs, I came with an idea to use the existing USB from my ISP modem. Luckily for me, that worked just
     fine.
 </p>
+<p>
+    Check it here: <a href="https://brunocampiol.online">https://brunocampiol.online</a>
+</p>
 <div class="row">
     <div class="col">
     </div>
@@ -26,29 +29,18 @@ layoutPath: ../../../
 </div>
 <h2>Network</h2>
 <p>
-    You will need a domain name to host using these instructions. I bought one for $1 dollar.
+    You will need a domain name to host using these instructions.
 </p>
-<h2>Software</h2>
-<h3>OS</h3>
+<h2>OS</h2>
 <p>
     I've installed the official Raspberry Pi OS Lite <a
         href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a>. There's no GUI support
     but will just just fine for what we want to.
 </p>
-<h3>Additional</h3>
+<h2>Software</h2>
 <p>
-    Following are the additional software required to host. To serve pure http content only Nginx is required.
-</p>
-<ul>
-    <li>
-        Nginx
-    </li>
-    <li>
-        .NET Core runtime
-    </li>
-</ul>
-<p>
-    Also make sure to follow these instructions
+    Instead of opening the ports for my local hardware, I am using Cloudflare tunnels. They are king of reverse proxy.
+    See more instructions on below links. In addition, you get a SSL connection. As per content serving, I am using Nginx. 
 </p>
 <a
     href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel">https://pimylifeup.com/raspberry-pi-cloudflare-tunnel</a>
