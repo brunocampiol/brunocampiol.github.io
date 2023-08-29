@@ -1,0 +1,49 @@
+---
+layout: default
+layoutPath: ../../../
+---
+
+{% include hightlightjs.html %}
+
+
+<h1>Raspberry Pi 2 revival</h1>
+<h2>Overview</h2>
+<p>
+    I've decided to give this piece of hardware a try. It's been a while since I last used it. One of the things came
+    into my mind on giving it a second chance was to use it for some sort of self hosting device. Now, to help with
+    electricity costs, I came with an idea to use the existing USB from my ISP modem. Luckily for me, that worked just
+    fine.
+</p>
+<p>
+    Check it here: <a href="https://brunocampiol.online">https://brunocampiol.online</a>
+</p>
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+        <img src="../../../assets/img/raspberrypi-hardware.jpg" alt="Raspberry pi connected to a ISP modem"
+            class="img-fluid">
+    </div>
+    <div class="col">
+    </div>
+</div>
+<h2>Network</h2>
+<p>
+    You will need a domain name to host using these instructions.
+</p>
+<h2>OS</h2>
+<p>
+    I've installed the official Raspberry Pi OS Lite <a
+        href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a>. There's no GUI support
+    but will just just fine for what we want to.
+</p>
+<h2>Software</h2>
+<p>
+    Instead of opening the ports for my local hardware, I am using Cloudflare tunnels. They are king of reverse proxy.
+    See more instructions on below links. In addition, you get a SSL connection. As per content serving, I am using Nginx. 
+</p>
+<a
+    href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel">https://pimylifeup.com/raspberry-pi-cloudflare-tunnel</a>
+<br>
+<a
+    href="https://jrashford.com/2022/02/15/self-hosting-with-cloudflare-tunnels-feat-raspberry-pi">https://jrashford.com/2022/02/15/self-hosting-with-cloudflare-tunnels-feat-raspberry-pi</a>
