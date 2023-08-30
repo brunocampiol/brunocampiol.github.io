@@ -45,3 +45,13 @@ a {
         opacity: 1;
     }
 }
+
+/* Pixel web font */
+@font-face {
+    font-family: pixerFont;
+    src: url(../dl/pixer.woff2);
+}
+
+.navbar-brand {
+    font-family: pixerFont;
+}
