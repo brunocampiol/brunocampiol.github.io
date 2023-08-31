@@ -1,5 +1,6 @@
 /* Layout color for all pages */
-/* https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
+/* https://coolors.co/palette/000000-14213d-fca311-adb5bd-e5e5e5-ffffff */
+/* https://coolors.co/palette/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529 */
 
 .navbar {
     background-color: #14213D;
@@ -26,7 +27,7 @@ h6 {
 }
 
 a {
-    color: #E5E5E5;
+    color: #ADB5BD;
 }
 
 /* Blur animation for logo */
