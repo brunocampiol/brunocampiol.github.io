@@ -1,7 +1,8 @@
 ---
 layout: default
-layoutPath: ../
+layoutPath: ../../../
 ---
+
 
 {% include jquery-min.html %}
 
@@ -85,7 +86,7 @@ layoutPath: ../
     }
 
     function launchPiWebWorker(digits) {
-        let workerFilePath = '../assets/js/picalc/piCalculator.js';
+        let workerFilePath = './{{page.layoutPath}}/assets/js/picalc/piCalculator.js';
         let workerUrl = workerCros(new URL(workerFilePath, window.location).href);
         let worker = new Worker(workerUrl);
 
