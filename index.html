@@ -3,8 +3,14 @@ layout: default
 ---
 
 <div class="row g-2">
-  <h1>Home</h1>
-  <p>This website is to share and show off some of the things I did. Hope you enjoy. Initially my site was built on PHP
+  <div class="row">
+    <div class="col">
+      <h1>Home</h1>
+    </div>
+    <div class="col text-end">
+      <p class="m-0" id="weatherData"></p>
+    </div>  
+    <p>This website is to share and show off some of the things I did. Hope you enjoy. Initially my site was built on PHP
     as the only language available for free hosting. Next, I moved it into .NET Core as I has a subscription to have
     something running on Azure. Finally, I think the road ends here as github pages are free for use and any backend
     coding can (and should) be done elsewhere.
@@ -43,3 +49,4 @@ layout: default
   <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href=".{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
+<script async src="./{{page.layoutPath}}assets/js/index.js"></script>
