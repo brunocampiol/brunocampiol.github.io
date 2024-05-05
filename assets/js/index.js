@@ -1,4 +1,4 @@
-const fetchData = async () => {
+const fetchWeatherData = async () => {
   try {
     const response = await fetch('https://brunocampiol.online/api/Weather/FromContextIpAddress');
     
@@ -10,11 +10,28 @@ const fetchData = async () => {
       const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
       document.getElementById('weatherData').innerHTML = weatherData;
     } else {
-      console.error(`Request failed with status: ${response.status}`);
+      console.error(`fetchWeatherData -> Request failed with status: ${response.status}`);
     }
   } catch (error) {
-    console.error('An error occurred while fetching data:', error);
+    console.error('fetchWeatherData -> An error occurred while fetching data:', error);
   }
 };
 
-fetchData();
+const fetchFactData = async () => {
+  try {
+    const response = await fetch('https://brunocampiol.online/api/Fact/SaveFactAndComputeHash');
+    
+    if (response.status === 200) {
+      const data = await response.json();
+      const { fact } = data;
+      document.getElementById('factData').innerHTML = fact;
+    } else {
+      console.error(`fetchFactData -> Request failed with status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('fetchFactData -> An error occurred while fetching data:', error);
+  }
+};
+
+fetchWeatherData();
+fetchFactData();
