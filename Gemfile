@@ -43,3 +43,7 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 # but is not part of the default gems since Ruby 3.0.0
 # https://github.com/github/pages-gem/issues/752
 gem "webrick", "~> 1.8"
+
+# Fix for warning: csv was loaded from the standard library, 
+# but will no longer be part of the default gems since Ruby 3.4.0
+gem "csv", "~> 3.3"
