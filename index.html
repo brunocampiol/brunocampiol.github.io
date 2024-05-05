@@ -43,10 +43,22 @@ layout: default
   </div>
 </div>
 <br />
-<h2>Blog posts</h2>
-<ul class="posts">
-  {% for post in site.posts %}
-  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href=".{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<div class="row">
+  <div class="col">
+    <h2>Blog posts</h2>
+    <ul class="posts">
+      {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href=".{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col">
+    <h2>Fact of the day</h2>
+    <p>
+      A new fact will appear here soon
+    </p>
+  </div>
+</div>
+
+
 <script async src="./{{page.layoutPath}}assets/js/index.js"></script>

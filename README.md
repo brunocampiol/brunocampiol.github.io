@@ -16,19 +16,9 @@ You may need to install the missing gem files from Gemfile.lock
 bundle install
 ```
 
-Open a new terminal and run the following command
-
-```bash
-jekyll build
-```
-
-To include drafts in the build, use the following
-
-```bash
-jekyll build --drafts
-```
-
 Jekyll will build content and create all static items. Destination folder should be `_site`
+
+The `Gemfile.lock` will be updated with new gems if available
 
 Alternatively, you can run the following command to make it available on the local server.
 
