@@ -1,6 +1,6 @@
 # Bruno Campiol GitHub page
 
-Personal webpage in Github. Check it out in below link
+Personal webpage in Github. Check it out below link
 
 [https://brunocampiol.github.io](https://brunocampiol.github.io)
 
@@ -16,7 +16,7 @@ You may need to install the missing gem files from Gemfile.lock
 bundle install
 ```
 
-Open a new terminal and run following command
+Open a new terminal and run the following command
 
 ```bash
 jekyll build
@@ -28,10 +28,9 @@ To include drafts in the build, use the following
 jekyll build --drafts
 ```
 
-Jekyll will build content and create all static items.
-Destination folder should be **_site**
+Jekyll will build content and create all static items. Destination folder should be `_site`
 
-Alternatively, you can run the following command to make it available on local server.
+Alternatively, you can run the following command to make it available on the local server.
 
 ```bash
 bundle exec jekyll serve --drafts
