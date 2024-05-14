@@ -1,23 +1,27 @@
+const fetchDotAnimation = (element, message) => {
+  element.innerHTML = message;
+  let dotCount = 0;
+  const dotAnimation = setInterval(() => {
+    if (dotCount < 3) {
+      element.innerHTML += '.';
+      dotCount++;
+    } else {
+      element.innerHTML = message;
+      dotCount = 0;
+    }
+  }, 200);
+
+  return dotAnimation;
+};
+
 const fetchWeatherData = async () => {
   try {
     const weatherDataElement = document.getElementById('weatherData');
-    const loadWeatherMessage = 'loading weather data ';
-
-    // Dot loading animation
-    weatherDataElement.innerHTML = loadWeatherMessage;
-    let dotCount = 0;
-    const dotAnimationInterval = setInterval(() => {
-      if (dotCount < 3) {
-        weatherDataElement.innerHTML += '.';
-        dotCount++;
-      } else {
-        weatherDataElement.innerHTML = loadWeatherMessage;
-        dotCount = 0;
-      }
-    }, 200);
+    const loadWeatherMessage = 'Fetching weather data';
+    const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
 
     const response = await fetch('https://brunocampiol.online/api/Weather/FromContextIpAddress');
-    clearInterval(dotAnimationInterval); // Stop dot animation
+    clearInterval(dotAnimation); // Stop dot animation
 
     if (response.status === 200) {
       const data = await response.json();
@@ -37,23 +41,11 @@ const fetchWeatherData = async () => {
 const fetchFactData = async () => {
   try {
     const factDataElement = document.getElementById('factData');
-    const loadFactMessage = 'Looking for a random fact ';
-
-    // Dot loading animation
-    factDataElement.innerHTML = loadFactMessage;
-    let dotCount = 0;
-    const dotAnimationInterval = setInterval(() => {
-      if (dotCount < 3) {
-        factDataElement.innerHTML += '.';
-        dotCount++;
-      } else {
-        factDataElement.innerHTML = loadFactMessage;
-        dotCount = 0;
-      }
-    }, 200);
+    const loadFactMessage = 'Looking for a random fact';
+    const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
 
     const response = await fetch('https://brunocampiol.online/api/Fact/SaveFactAndComputeHash');
-    clearInterval(dotAnimationInterval); // Stop dot animation
+    clearInterval(dotAnimation); // Stop dot animation
 
     if (response.status === 200) {
       const data = await response.json();
