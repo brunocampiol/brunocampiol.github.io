@@ -8,7 +8,7 @@
 
 body {
     background-color: #000000;
-    font-family: Verdana, Helvetica, Roboto, Ubuntu, Arial;
+    font-family: Verdana, Helvetica, Roboto, Ubuntu, Arial, system-ui, -apple-system;
 }
 
 p,
