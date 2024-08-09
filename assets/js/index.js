@@ -20,7 +20,7 @@ const fetchWeatherData = async () => {
     const loadWeatherMessage = 'Fetching weather data';
     const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
 
-    const response = await fetch('https://brunocampiol.online/api/Weather/FromContextIpAddress');
+    const response = await fetch('https://brunocampiol.top/api/Weather/FromContextIpAddress');
     clearInterval(dotAnimation); // Stop dot animation
 
     if (response.status === 200) {
@@ -44,7 +44,7 @@ const fetchFactData = async () => {
     const loadFactMessage = 'Looking for a random fact';
     const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
 
-    const response = await fetch('https://brunocampiol.online/api/Fact/SaveFactAndComputeHash');
+    const response = await fetch('https://brunocampiol.top/api/Fact/SaveFactAndComputeHash');
     clearInterval(dotAnimation); // Stop dot animation
 
     if (response.status === 200) {
