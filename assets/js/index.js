@@ -59,6 +59,7 @@ const fetchWeatherData = async () => {
   } catch (error) {
     console.error(`fetchWeatherData -> Error message: ${error.message}`);
     console.error(error);
+    weatherDataElement.innerHTML = '';
   } finally {
     clearInterval(dotAnimation);
   }
@@ -85,6 +86,8 @@ const fetchFactData = async () => {
   } catch (error) {
     console.error(`fetchFactData -> Error message: ${error.message}`);
     console.error(error);
+    factDataElement.innerHTML = '';
+
   } finally {
     clearInterval(dotAnimation);
   }
