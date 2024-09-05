@@ -20,10 +20,22 @@ Jekyll will build content and create all static items. Destination folder should
 
 The `Gemfile.lock` will be updated with new gems if available
 
-Alternatively, you can run the following command to make it available on the local server.
+Pass `--livereload` to automatically refresh the page with each change
+
+```bash
+bundle exec jekyll serve --livereload
+```
+
+If creating new posts, use the `--drafts` option to see them before going live.
 
 ```bash
 bundle exec jekyll serve --drafts
+```
+
+Or, alternatively, with both options
+
+```bash
+bundle exec jekyll serve --drafts --livereload
 ```
 
 ## License

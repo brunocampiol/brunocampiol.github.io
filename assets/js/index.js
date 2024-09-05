@@ -14,50 +14,79 @@ const fetchDotAnimation = (element, message) => {
   return dotAnimation;
 };
 
-const fetchWeatherData = async () => {
-  try {
-    const weatherDataElement = document.getElementById('weatherData');
-    const loadWeatherMessage = 'Fetching weather data';
-    const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
+const fetchWithTimeout = async (url, timeout = 35000) => {
+  const controller = new AbortController();
+  const signal = controller.signal;
 
-    const response = await fetch('https://brunocampiol.top/api/Weather/FromContextIpAddress');
-    clearInterval(dotAnimation); // Stop dot animation
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+  }, timeout);
+
+  try {
+    const response = await fetch(url, { signal });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (error) {
+    if (signal.aborted) {
+      throw new Error(`Request timed out after ${timeout/1000} seconds`);
+    } else {
+      throw error;
+    }
+  }
+};
+
+const fetchWeatherData = async () => {
+  const weatherDataElement = document.getElementById('weatherData');
+  const loadWeatherMessage = 'Fetching weather data';
+  const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
+
+  try {
+    const response = await fetchWithTimeout('https://brunocampiol.top/api/Weather/FromContextIpAddress');
+    clearInterval(dotAnimation);
 
     if (response.status === 200) {
       const data = await response.json();
-      const { englishName, countryCode, weatherText, temperature  } = data;
+      const { englishName, countryCode, weatherText, temperature } = data;
       const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
       const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
       const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
       weatherDataElement.innerHTML = weatherData;
     } else {
-      console.error(`fetchWeatherData -> Request failed with status: ${response.status}`);
+      const errorMessage = 'fetchWeatherData -> Expecting HTTP 200 OK but received ' +
+                            `${response.status}. Content: '${await response.text()}'`;
+      console.error(errorMessage);
     }
   } catch (error) {
-    console.error('fetchWeatherData -> An error occurred while fetching data:', error);
+    console.error(`fetchWeatherData -> Error message: ${error.message}`);
+    console.error(error);
+  } finally {
+    clearInterval(dotAnimation);
   }
 };
 
 const fetchFactData = async () => {
-  try {
-    const factDataElement = document.getElementById('factData');
-    const loadFactMessage = 'Looking for a random fact';
-    const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
+  const factDataElement = document.getElementById('factData');
+  const loadFactMessage = 'Looking for a random fact';
+  const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
 
-    const response = await fetch('https://brunocampiol.top/api/Fact/SaveFactAndComputeHash');
-    clearInterval(dotAnimation); // Stop dot animation
+  try {
+    const response = await fetchWithTimeout('https://brunocampiol.top/api/Fact/SaveFactAndComputeHash');
+    clearInterval(dotAnimation);
 
     if (response.status === 200) {
       const data = await response.json();
       const { fact } = data;
       factDataElement.innerHTML = fact;
     } else {
-      console.error(`fetchFactData -> Request failed with status: ${response.status}`);
-      factDataElement.innerHTML = 'Failed to retrieve a random fact :('
+      const errorMessage = 'fetchFactData -> Expecting HTTP 200 OK but received ' +
+                            `${response.status}. Content: '${await response.text()}'`;
+      console.error(errorMessage);
     }
   } catch (error) {
-    console.error('fetchFactData -> An error occurred while fetching data:', error);
-    factDataElement.innerHTML = 'Failed to retrieve a random fact :('
+    console.error(`fetchFactData -> Error message: ${error.message}`);
+    console.error(error);
+  } finally {
+    clearInterval(dotAnimation);
   }
 };
 
