@@ -24,13 +24,13 @@ const fetchWithTimeout = async (url, timeout = 35000) => {
 
   try {
     const response = await fetch(url, { signal });
-    clearTimeout(timeoutId); 
+    clearTimeout(timeoutId);
     return response;
   } catch (error) {
     if (signal.aborted) {
-      throw new Error('Request timed out after 35 seconds');
+      throw new Error(`Request timed out after ${timeout/1000} seconds`);
     } else {
-      throw error; // Other errors
+      throw error;
     }
   }
 };
@@ -41,7 +41,7 @@ const fetchWeatherData = async () => {
   const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
 
   try {
-    const response = await fetchWithTimeout('https://brunocampiol.top/api/Weather/FromContextIpAddress', 10000);
+    const response = await fetchWithTimeout('https://brunocampiol.top/api/Weather/FromContextIpAddress');
     clearInterval(dotAnimation);
 
     if (response.status === 200) {
@@ -52,10 +52,13 @@ const fetchWeatherData = async () => {
       const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
       weatherDataElement.innerHTML = weatherData;
     } else {
-      console.error(`fetchWeatherData -> Request failed with status: ${response.status}`);
+      const errorMessage = 'fetchWeatherData -> Expecting HTTP 200 OK but received ' +
+                            `${response.status}. Content: '${await response.text()}'`;
+      console.error(errorMessage);
     }
   } catch (error) {
-    console.error('fetchWeatherData -> An error occurred:', error.message);
+    console.error(`fetchWeatherData -> Error message: ${error.message}`);
+    console.error(error);
   } finally {
     clearInterval(dotAnimation);
   }
@@ -67,7 +70,7 @@ const fetchFactData = async () => {
   const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
 
   try {
-    const response = await fetchWithTimeout('https://fakeresponder.com/?sleep=5000', 10000);
+    const response = await fetchWithTimeout('https://brunocampiol.top/api/Fact/SaveFactAndComputeHash');
     clearInterval(dotAnimation);
 
     if (response.status === 200) {
@@ -75,10 +78,13 @@ const fetchFactData = async () => {
       const { fact } = data;
       factDataElement.innerHTML = fact;
     } else {
-      console.error(`fetchFactData -> Request failed with status: ${response.status}`);
+      const errorMessage = 'fetchFactData -> Expecting HTTP 200 OK but received ' +
+                            `${response.status}. Content: '${await response.text()}'`;
+      console.error(errorMessage);
     }
   } catch (error) {
-    console.error('fetchFactData -> An error occurred:', error.message);
+    console.error(`fetchFactData -> Error message: ${error.message}`);
+    console.error(error);
   } finally {
     clearInterval(dotAnimation);
   }
