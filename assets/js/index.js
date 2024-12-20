@@ -69,25 +69,34 @@ const fetchFactData = async () => {
   const factDataElement = document.getElementById('factData');
   const loadFactMessage = 'Looking for a random fact';
   const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
+  const primaryUrl = 'https://brunocampiol.top/api/Fact/SaveFactAndComputeHash';
+  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/Fact/SaveFactAndComputeHash';
 
   try {
-    const response = await fetchWithTimeout('https://brunocampiol.top/api/Fact/SaveFactAndComputeHash');
-    clearInterval(dotAnimation);
-
-    if (response.status === 200) {
-      const data = await response.json();
-      const { fact } = data;
-      factDataElement.innerHTML = fact;
-    } else {
-      const errorMessage = 'fetchFactData -> Expecting HTTP 200 OK but received ' +
-                            `${response.status}. Content: '${await response.text()}'`;
-      console.error(errorMessage);
+    let response = await fetchWithTimeout(primaryUrl);
+    if (response.status !== 200) {
+      throw new Error(`Primary endpoint failed with status ${response.status}`);
     }
+    const data = await response.json();
+    const { fact } = data;
+    factDataElement.innerHTML = fact;
   } catch (error) {
-    console.error(`fetchFactData -> Error message: ${error.message}`);
-    console.error(error);
-    factDataElement.innerHTML = '';
-
+    console.error(`fetchFactData -> Primary endpoint error: ${error.message}`);
+    try {
+      let response = await fetchWithTimeout(fallbackUrl);
+      if (response.status === 200) {
+        const data = await response.json();
+        const { fact } = data;
+        factDataElement.innerHTML = fact;
+      } else {
+        const errorMessage = 'fetchFactData -> Fallback endpoint failed with status ' +
+                              `${response.status}. Content: '${await response.text()}'`;
+        console.error(errorMessage);
+      }
+    } catch (fallbackError) {
+      console.error(`fetchFactData -> Fallback endpoint error: ${fallbackError.message}`);
+      factDataElement.innerHTML = '';
+    }
   } finally {
     clearInterval(dotAnimation);
   }
