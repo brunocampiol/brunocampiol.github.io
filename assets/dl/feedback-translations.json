@@ -1,0 +1,92 @@
+{
+    "en": {
+        "pageTitle": "Anonymous Feedback",
+        "heading": "Anonymous feedback message",
+        "inputPlaceholder": "Leave your message here",
+        "buttonText": "Submit"
+    },
+    "zh": {
+        "pageTitle": "匿名反馈",
+        "heading": "匿名反馈消息",
+        "inputPlaceholder": "在这里留下您的消息",
+        "buttonText": "提交"
+    },
+    "hi": {
+        "pageTitle": "गुमनाम प्रतिक्रिया",
+        "heading": "गुमनाम प्रतिक्रिया संदेश",
+        "inputPlaceholder": "यहां अपना संदेश छोड़ें",
+        "buttonText": "जमा करें"
+    },
+    "es": {
+        "pageTitle": "Retroalimentación Anónima",
+        "heading": "Mensaje de retroalimentación anónima",
+        "inputPlaceholder": "Deja tu mensaje aquí",
+        "buttonText": "Enviar"
+    },
+    "fr": {
+        "pageTitle": "Retour Anonyme",
+        "heading": "Message de retour anonyme",
+        "inputPlaceholder": "Laissez votre message ici",
+        "buttonText": "Soumettre"
+    },
+    "ar": {
+        "pageTitle": "ملاحظات مجهولة",
+        "heading": "رسالة ملاحظات مجهولة",
+        "inputPlaceholder": "اترك رسالتك هنا",
+        "buttonText": "إرسال"
+    },
+    "bn": {
+        "pageTitle": "বেনামী প্রতিক্রিয়া",
+        "heading": "বেনামী প্রতিক্রিয়া বার্তা",
+        "inputPlaceholder": "এখানে আপনার বার্তা রাখুন",
+        "buttonText": "জমা দিন"
+    },
+    "ru": {
+        "pageTitle": "Анонимный отзыв",
+        "heading": "Анонимное сообщение с отзывом",
+        "inputPlaceholder": "Оставьте ваше сообщение здесь",
+        "buttonText": "Отправить"
+    },
+    "pt": {
+        "pageTitle": "Feedback Anônimo",
+        "heading": "Mensagem de feedback anônimo",
+        "inputPlaceholder": "Deixe sua mensagem aqui",
+        "buttonText": "Enviar"
+    },
+    "id": {
+        "pageTitle": "Umpan Balik Anonim",
+        "heading": "Pesan umpan balik anonim",
+        "inputPlaceholder": "Tinggalkan pesan Anda di sini",
+        "buttonText": "Kirim"
+    },
+    "ur": {
+        "pageTitle": "گمنام تاثرات",
+        "heading": "گمنام تاثرات کا پیغام",
+        "inputPlaceholder": "اپنا پیغام یہاں چھوڑیں",
+        "buttonText": "جمع کرائیں"
+    },
+    "de": {
+        "pageTitle": "Anonymes Feedback",
+        "heading": "Anonyme Feedback-Nachricht",
+        "inputPlaceholder": "Hinterlassen Sie hier Ihre Nachricht",
+        "buttonText": "Einreichen"
+    },
+    "ja": {
+        "pageTitle": "匿名フィードバック",
+        "heading": "匿名フィードバックメッセージ",
+        "inputPlaceholder": "ここにメッセージを残してください",
+        "buttonText": "送信"
+    },
+    "sw": {
+        "pageTitle": "Maoni Yasiyojulikana",
+        "heading": "Ujumbe wa maoni yasiyojulikana",
+        "inputPlaceholder": "Acha ujumbe wako hapa",
+        "buttonText": "Tuma"
+    },
+    "mr": {
+        "pageTitle": "अनाम अभिप्राय",
+        "heading": "अनाम अभिप्राय संदेश",
+        "inputPlaceholder": "आपला संदेश येथे सोडा",
+        "buttonText": "प्रस्तुत करा"
+    }
+}

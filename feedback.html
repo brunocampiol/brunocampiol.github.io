@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title id="pageTitle">Anonymous Feedback</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+        <h1 id="heading" class="mb-3">Anonymous feedback message</h1>
+        <textarea id="userInput" rows="5" class="w-100 mb-3 form-control" placeholder="Leave your message here"></textarea>
+        <button id="submitBtn" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+    <script>
+        const userLang = (navigator.language || navigator.userLanguage).split('-')[0].toLowerCase();
+        const defaultLang = 'en';
+        // Fetch translations
+        fetch('./assets/dl/feedback-translations.json')
+        .then(response => response.json())
+        .then(data => {
+            const currentLangData = data[userLang] || data[defaultLang];
+            document.getElementById('userInput').placeholder = currentLangData.inputPlaceholder;
+            document.getElementById('submitBtn').textContent = currentLangData.buttonText;
+            document.getElementById('heading').textContent = currentLangData.heading;
+            document.getElementById('pageTitle').textContent = currentLangData.pageTitle;
+        });
+    </script>
+</body>
+</html>
