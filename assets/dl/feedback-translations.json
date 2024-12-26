@@ -3,90 +3,210 @@
         "pageTitle": "Anonymous Feedback",
         "heading": "Anonymous feedback message",
         "inputPlaceholder": "Leave your message here",
-        "buttonText": "Submit"
+        "buttonSubmitText": "Submit",
+        "btnSubmittingText": "Submitting...",
+        "validationText": "Message cannot be empty, just white space, or longer than 5000 characters.",
+        "successMessage": "Your message was submitted. Thank you.",
+        "errorMessage": "An error occurred while submitting your message. Please try again later."
     },
     "zh": {
         "pageTitle": "匿名反馈",
-        "heading": "匿名反馈消息",
-        "inputPlaceholder": "在这里留下您的消息",
-        "buttonText": "提交"
+        "heading": "匿名反馈信息",
+        "inputPlaceholder": "在这里留下您的信息",
+        "buttonSubmitText": "提交",
+        "btnSubmittingText": "提交中...",
+        "validationText": "消息不能为空、仅为空格或超过5000个字符。",
+        "successMessage": "您的消息已提交。谢谢。",
+        "errorMessage": "提交您的消息时发生错误。请稍后再试。"
     },
     "hi": {
         "pageTitle": "गुमनाम प्रतिक्रिया",
         "heading": "गुमनाम प्रतिक्रिया संदेश",
-        "inputPlaceholder": "यहां अपना संदेश छोड़ें",
-        "buttonText": "जमा करें"
+        "inputPlaceholder": "अपना संदेश यहाँ छोड़ें",
+        "buttonSubmitText": "जमा करें",
+        "btnSubmittingText": "जमा हो रहा है...",
+        "validationText": "संदेश खाली, केवल सफेद स्थान, या 5000 वर्णों से अधिक नहीं हो सकता।",
+        "successMessage": "आपका संदेश जमा हो गया है। धन्यवाद।",
+        "errorMessage": "आपका संदेश जमा करते समय एक त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।"
     },
     "es": {
         "pageTitle": "Retroalimentación Anónima",
         "heading": "Mensaje de retroalimentación anónima",
         "inputPlaceholder": "Deja tu mensaje aquí",
-        "buttonText": "Enviar"
-    },
-    "fr": {
-        "pageTitle": "Retour Anonyme",
-        "heading": "Message de retour anonyme",
-        "inputPlaceholder": "Laissez votre message ici",
-        "buttonText": "Soumettre"
+        "buttonSubmitText": "Enviar",
+        "btnSubmittingText": "Enviando...",
+        "validationText": "El mensaje no puede estar vacío, solo espacio en blanco, o tener más de 5000 caracteres.",
+        "successMessage": "Tu mensaje fue enviado. Gracias.",
+        "errorMessage": "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
     },
     "ar": {
         "pageTitle": "ملاحظات مجهولة",
         "heading": "رسالة ملاحظات مجهولة",
         "inputPlaceholder": "اترك رسالتك هنا",
-        "buttonText": "إرسال"
+        "buttonSubmitText": "إرسال",
+        "btnSubmittingText": "جارٍ الإرسال...",
+        "validationText": "لا يمكن أن تكون الرسالة فارغة أو مجرد مسافة بيضاء أو أطول من 5000 حرف.",
+        "successMessage": "تم إرسال رسالتك. شكرا لك.",
+        "errorMessage": "حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقًا."
     },
     "bn": {
         "pageTitle": "বেনামী প্রতিক্রিয়া",
         "heading": "বেনামী প্রতিক্রিয়া বার্তা",
         "inputPlaceholder": "এখানে আপনার বার্তা রাখুন",
-        "buttonText": "জমা দিন"
+        "buttonSubmitText": "জমা দিন",
+        "btnSubmittingText": "জমা হচ্ছে...",
+        "validationText": "বার্তাটি খালি, শুধুমাত্র সাদা স্থান, বা 5000 অক্ষরের বেশি হতে পারে না।",
+        "successMessage": "আপনার বার্তা জমা হয়েছে। ধন্যবাদ।",
+        "errorMessage": "আপনার বার্তা জমা দেওয়ার সময় একটি ত্রুটি ঘটেছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
+    },
+    "pt": {
+        "pageTitle": "Feedback Anônimo",
+        "heading": "Mensagem anônima",
+        "inputPlaceholder": "Deixe sua mensagem aqui",
+        "buttonSubmitText": "Enviar",
+        "btnSubmittingText": "Enviando...",
+        "validationText": "A mensagem não pode estar vazia, ser apenas espaço em branco ou ter mais de 5000 caracteres.",
+        "successMessage": "Sua mensagem foi enviada. Obrigado.",
+        "errorMessage": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde."
     },
     "ru": {
         "pageTitle": "Анонимный отзыв",
         "heading": "Анонимное сообщение с отзывом",
         "inputPlaceholder": "Оставьте ваше сообщение здесь",
-        "buttonText": "Отправить"
-    },
-    "pt": {
-        "pageTitle": "Feedback Anônimo",
-        "heading": "Mensagem de feedback anônimo",
-        "inputPlaceholder": "Deixe sua mensagem aqui",
-        "buttonText": "Enviar"
-    },
-    "id": {
-        "pageTitle": "Umpan Balik Anonim",
-        "heading": "Pesan umpan balik anonim",
-        "inputPlaceholder": "Tinggalkan pesan Anda di sini",
-        "buttonText": "Kirim"
-    },
-    "ur": {
-        "pageTitle": "گمنام تاثرات",
-        "heading": "گمنام تاثرات کا پیغام",
-        "inputPlaceholder": "اپنا پیغام یہاں چھوڑیں",
-        "buttonText": "جمع کرائیں"
-    },
-    "de": {
-        "pageTitle": "Anonymes Feedback",
-        "heading": "Anonyme Feedback-Nachricht",
-        "inputPlaceholder": "Hinterlassen Sie hier Ihre Nachricht",
-        "buttonText": "Einreichen"
+        "buttonSubmitText": "Отправить",
+        "btnSubmittingText": "Отправка...",
+        "validationText": "Сообщение не может быть пустым, состоять только из пробелов или быть длиннее 5000 символов.",
+        "successMessage": "Ваше сообщение было отправлено. Спасибо.",
+        "errorMessage": "Произошла ошибка при отправке вашего сообщения. Пожалуйста, попробуйте позже."
     },
     "ja": {
         "pageTitle": "匿名フィードバック",
         "heading": "匿名フィードバックメッセージ",
         "inputPlaceholder": "ここにメッセージを残してください",
-        "buttonText": "送信"
+        "buttonSubmitText": "送信",
+        "btnSubmittingText": "送信中...",
+        "validationText": "メッセージは空白、空白のみ、または5000文字を超えることはできません。",
+        "successMessage": "メッセージが送信されました。ありがとうございます。",
+        "errorMessage": "メッセージの送信中にエラーが発生しました。後でもう一度お試しください。"
     },
-    "sw": {
-        "pageTitle": "Maoni Yasiyojulikana",
-        "heading": "Ujumbe wa maoni yasiyojulikana",
-        "inputPlaceholder": "Acha ujumbe wako hapa",
-        "buttonText": "Tuma"
+    "pa": {
+        "pageTitle": "ਗੁਮਨਾਮ ਪ੍ਰਤੀਕਿਰਿਆ",
+        "heading": "ਗੁਮਨਾਮ ਪ੍ਰਤੀਕਿਰਿਆ ਸੁਨੇਹਾ",
+        "inputPlaceholder": "ਇੱਥੇ ਆਪਣਾ ਸੁਨੇਹਾ ਛੱਡੋ",
+        "buttonSubmitText": "ਜਮ੍ਹਾਂ ਕਰੋ",
+        "btnSubmittingText": "ਜਮ੍ਹਾਂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+        "validationText": "ਸੁਨੇਹਾ ਖਾਲੀ, ਸਿਰਫ ਸਫੈਦ ਸਥਾਨ, ਜਾਂ 5000 ਅੱਖਰਾਂ ਤੋਂ ਵੱਧ ਨਹੀਂ ਹੋ ਸਕਦਾ।",
+        "successMessage": "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਜਮ੍ਹਾਂ ਹੋ ਗਿਆ ਹੈ। ਧੰਨਵਾਦ।",
+        "errorMessage": "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਜਮ੍ਹਾਂ ਕਰਦੇ ਸਮੇਂ ਇੱਕ ਗਲਤੀ ਹੋਈ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+    },
+    "de": {
+        "pageTitle": "Anonymes Feedback",
+        "heading": "Anonyme Feedback-Nachricht",
+        "inputPlaceholder": "Hinterlassen Sie hier Ihre Nachricht",
+        "buttonSubmitText": "Absenden",
+        "btnSubmittingText": "Wird gesendet...",
+        "validationText": "Die Nachricht darf nicht leer sein, nur aus Leerzeichen bestehen oder länger als 5000 Zeichen sein.",
+        "successMessage": "Ihre Nachricht wurde gesendet. Danke.",
+        "errorMessage": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+    },
+    "jv": {
+        "pageTitle": "Umpan Balik Anonim",
+        "heading": "Pesan umpan balik anonim",
+        "inputPlaceholder": "Tinggalake pesen sampeyan ing kene",
+        "buttonSubmitText": "Kirim",
+        "btnSubmittingText": "Ngirim...",
+        "validationText": "Pesen ora bisa kosong, mung spasi putih, utawa luwih saka 5000 karakter.",
+        "successMessage": "Pesen sampeyan wis dikirim. Matur nuwun.",
+        "errorMessage": "Ana kesalahan nalika ngirim pesen sampeyan. Mangga coba maneh mengko."
+    },
+    "ko": {
+        "pageTitle": "익명 피드백",
+        "heading": "익명 피드백 메시지",
+        "inputPlaceholder": "여기에 메시지를 남겨주세요",
+        "buttonSubmitText": "제출",
+        "btnSubmittingText": "제출 중...",
+        "validationText": "메시지는 비어 있거나, 공백만 있거나, 5000자를 초과할 수 없습니다.",
+        "successMessage": "메시지가 제출되었습니다. 감사합니다.",
+        "errorMessage": "메시지를 제출하는 동안 오류가 발생했습니다. 나중에 다시 시도해 주세요."
+    },
+    "fr": {
+        "pageTitle": "Retour Anonyme",
+        "heading": "Message de retour anonyme",
+        "inputPlaceholder": "Laissez votre message ici",
+        "buttonSubmitText": "Soumettre",
+        "btnSubmittingText": "Soumission...",
+        "validationText": "Le message ne peut pas être vide, uniquement des espaces blancs, ou dépasser 5000 caractères.",
+        "successMessage": "Votre message a été soumis. Merci.",
+        "errorMessage": "Une erreur s'est produite lors de la soumission de votre message. Veuillez réessayer plus tard."
+    },
+    "te": {
+        "pageTitle": "అజ్ఞాత ఫీడ్‌బ్యాక్",
+        "heading": "అజ్ఞాత ఫీడ్‌బ్యాక్ సందేశం",
+        "inputPlaceholder": "మీ సందేశాన్ని ఇక్కడ వదలండి",
+        "buttonSubmitText": "సమర్పించు",
+        "btnSubmittingText": "సమర్పిస్తున్నాం...",
+        "validationText": "సందేశం ఖాళీగా, కేవలం తెల్ల స్థలంగా, లేదా 5000 అక్షరాల కంటే ఎక్కువగా ఉండకూడదు.",
+        "successMessage": "మీ సందేశం సమర్పించబడింది. ధన్యవాదాలు.",
+        "errorMessage": "మీ సందేశాన్ని సమర్పించేటప్పుడు లోపం సంభవించింది. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి."
     },
     "mr": {
         "pageTitle": "अनाम अभिप्राय",
         "heading": "अनाम अभिप्राय संदेश",
         "inputPlaceholder": "आपला संदेश येथे सोडा",
-        "buttonText": "प्रस्तुत करा"
+        "buttonSubmitText": "सबमिट करा",
+        "btnSubmittingText": "सबमिट करत आहे...",
+        "validationText": "संदेश रिकामा, फक्त पांढरा जागा, किंवा 5000 वर्णांपेक्षा जास्त असू शकत नाही.",
+        "successMessage": "आपला संदेश सबमिट केला गेला आहे. धन्यवाद.",
+        "errorMessage": "आपला संदेश सबमिट करताना एक त्रुटी आली. कृपया नंतर पुन्हा प्रयत्न करा."
+    },
+    "tr": {
+        "pageTitle": "Anonim Geri Bildirim",
+        "heading": "Anonim geri bildirim mesajı",
+        "inputPlaceholder": "Mesajınızı buraya bırakın",
+        "buttonSubmitText": "Gönder",
+        "btnSubmittingText": "Gönderiliyor...",
+        "validationText": "Mesaj boş, sadece boşluk veya 5000 karakterden uzun olamaz.",
+        "successMessage": "Mesajınız gönderildi. Teşekkürler.",
+        "errorMessage": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+    },
+    "ta": {
+        "pageTitle": "அடையாளம் தெரியாத கருத்து",
+        "heading": "அடையாளம் தெரியாத கருத்து செய்தி",
+        "inputPlaceholder": "உங்கள் செய்தியை இங்கே விடுங்கள்",
+        "buttonSubmitText": "சமர்ப்பிக்கவும்",
+        "btnSubmittingText": "சமர்ப்பிக்கிறது...",
+        "validationText": "செய்தி காலியாக, வெறும் வெள்ளை இடமாக, அல்லது 5000 எழுத்துக்களை விட நீளமாக இருக்க முடியாது.",
+        "successMessage": "உங்கள் செய்தி சமர்ப்பிக்கப்பட்டது. நன்றி.",
+        "errorMessage": "உங்கள் செய்தியை சமர்ப்பிக்கும் போது ஒரு பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் முயற்சிக்கவும்."
+    },
+    "vi": {
+        "pageTitle": "Phản hồi ẩn danh",
+        "heading": "Tin nhắn phản hồi ẩn danh",
+        "inputPlaceholder": "Để lại tin nhắn của bạn ở đây",
+        "buttonSubmitText": "Gửi",
+        "btnSubmittingText": "Đang gửi...",
+        "validationText": "Tin nhắn không được để trống, chỉ có khoảng trắng hoặc dài hơn 5000 ký tự.",
+        "successMessage": "Tin nhắn của bạn đã được gửi. Cảm ơn bạn.",
+        "errorMessage": "Đã xảy ra lỗi khi gửi tin nhắn của bạn. Vui lòng thử lại sau."
+    },
+    "ur": {
+        "pageTitle": "گمنام تاثرات",
+        "heading": "گمنام تاثرات کا پیغام",
+        "inputPlaceholder": "اپنا پیغام یہاں چھوڑیں",
+        "buttonSubmitText": "جمع کرائیں",
+        "btnSubmittingText": "جمع کر رہا ہے...",
+        "validationText": "پیغام خالی، صرف سفید جگہ، یا 5000 حروف سے زیادہ نہیں ہو سکتا۔",
+        "successMessage": "آپ کا پیغام جمع کر دیا گیا ہے۔ شکریہ.",
+        "errorMessage": "آپ کا پیغام جمع کرتے وقت ایک خرابی پیش آگئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔"
+    },
+    "it": {
+        "pageTitle": "Feedback Anonimo",
+        "heading": "Messaggio di feedback anonimo",
+        "inputPlaceholder": "Lascia il tuo messaggio qui",
+        "buttonSubmitText": "Invia",
+        "btnSubmittingText": "Invio...",
+        "validationText": "Il messaggio non può essere vuoto, solo spazi bianchi, o più lungo di 5000 caratteri.",
+        "successMessage": "Il tuo messaggio è stato inviato. Grazie.",
+        "errorMessage": "Si è verificato un errore durante l'invio del tuo messaggio. Per favore riprova più tardi."
     }
 }
