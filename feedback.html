@@ -76,14 +76,14 @@
             };
 
             try {
-                await postData('https://brunocampiol.top/api/feedback/submitandforget', { userInput });
+                await postData('https://brunocampiol.top/api/feedback/submitandforget', userInput );
                 userInputField.hidden = true;
                 submitBtn.hidden = true;
                 successMessage.hidden = false;
             } catch {
                 console.warn('Failed to submit feedback to the primary endpoint. Trying the backup endpoint.');
                 try {
-                    await postData('https://tunnel.bruno-campiol.workers.dev/api/feedback/submitandforget', { userInput });
+                    await postData('https://tunnel.bruno-campiol.workers.dev/api/feedback/submitandforget', userInput );
                     userInputField.hidden = true;
                     submitBtn.hidden = true;
                     successMessage.hidden = false;
