@@ -39,27 +39,40 @@ const fetchWeatherData = async () => {
   const weatherDataElement = document.getElementById('weatherData');
   const loadWeatherMessage = 'Fetching weather data';
   const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
+  const primaryUrl = 'https://brunocampiol.top/api/Weather/FromContextIpAddress';
+  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/Weather/FromContextIpAddress';
 
   try {
-    const response = await fetchWithTimeout('https://brunocampiol.top/api/Weather/FromContextIpAddress');
-    clearInterval(dotAnimation);
-
-    if (response.status === 200) {
-      const data = await response.json();
-      const { englishName, countryCode, weatherText, temperature } = data;
-      const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
-      const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
-      const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
-      weatherDataElement.innerHTML = weatherData;
-    } else {
-      const errorMessage = 'fetchWeatherData -> Expecting HTTP 200 OK but received ' +
-                            `${response.status}. Content: '${await response.text()}'`;
-      console.error(errorMessage);
+    let response = await fetchWithTimeout(primaryUrl);
+    if (response.status !== 200) {
+      throw new Error(`Primary endpoint failed with status ${response.status}`);
     }
+    const data = await response.json();
+    const { englishName, countryCode, weatherText, temperature } = data;
+    const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
+    const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
+    const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
+    weatherDataElement.innerHTML = weatherData;
   } catch (error) {
-    console.error(`fetchWeatherData -> Error message: ${error.message}`);
-    console.error(error);
-    weatherDataElement.innerHTML = '';
+    console.error(`fetchWeatherData -> Primary endpoint error: ${error.message}`);
+    try {
+      let response = await fetchWithTimeout(fallbackUrl);
+      if (response.status === 200) {
+        const data = await response.json();
+        const { englishName, countryCode, weatherText, temperature } = data;
+        const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
+        const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
+        const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
+        weatherDataElement.innerHTML = weatherData;
+      } else {
+        const errorMessage = 'fetchWeatherData -> Fallback endpoint failed with status ' +
+                              `${response.status}. Content: '${await response.text()}'`;
+        console.error(errorMessage);
+      }
+    } catch (fallbackError) {
+      console.error(`fetchWeatherData -> Fallback endpoint error: ${fallbackError.message}`);
+      weatherDataElement.innerHTML = '';
+    }
   } finally {
     clearInterval(dotAnimation);
   }
