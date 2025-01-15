@@ -28,7 +28,7 @@ const fetchWithTimeout = async (url, timeout = 35000) => {
     return response;
   } catch (error) {
     if (signal.aborted) {
-      throw new Error(`Request timed out after ${timeout/1000} seconds`);
+      throw new Error(`Request timed out after ${timeout / 1000} seconds`);
     } else {
       throw error;
     }
@@ -66,7 +66,7 @@ const fetchWeatherData = async () => {
         weatherDataElement.innerHTML = weatherData;
       } else {
         const errorMessage = 'fetchWeatherData -> Fallback endpoint failed with status ' +
-                              `${response.status}. Content: '${await response.text()}'`;
+          `${response.status}. Content: '${await response.text()}'`;
         console.error(errorMessage);
       }
     } catch (fallbackError) {
@@ -103,7 +103,7 @@ const fetchFactData = async () => {
         factDataElement.innerHTML = fact;
       } else {
         const errorMessage = 'fetchFactData -> Fallback endpoint failed with status ' +
-                              `${response.status}. Content: '${await response.text()}'`;
+          `${response.status}. Content: '${await response.text()}'`;
         console.error(errorMessage);
       }
     } catch (fallbackError) {
