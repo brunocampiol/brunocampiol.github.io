@@ -39,8 +39,8 @@ const fetchWeatherData = async () => {
   const weatherDataElement = document.getElementById('weatherData');
   const loadWeatherMessage = 'Fetching weather data';
   const dotAnimation = fetchDotAnimation(weatherDataElement, loadWeatherMessage);
-  const primaryUrl = 'https://brunocampiol.top/api/Weather/FromContextIpAddress';
-  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/Weather/FromContextIpAddress';
+  const primaryUrl = 'https://brunocampiol.top/api/website/weather';
+  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/website/weather';
 
   try {
     let response = await fetchWithTimeout(primaryUrl);
@@ -82,8 +82,8 @@ const fetchFactData = async () => {
   const factDataElement = document.getElementById('factData');
   const loadFactMessage = 'Looking for a random fact';
   const dotAnimation = fetchDotAnimation(factDataElement, loadFactMessage);
-  const primaryUrl = 'https://brunocampiol.top/api/Fact/SaveFactAndComputeHash';
-  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/Fact/SaveFactAndComputeHash';
+  const primaryUrl = 'https://brunocampiol.top/api/website/fact';
+  const fallbackUrl = 'https://tunnel.bruno-campiol.workers.dev/api/website/fact';
 
   try {
     let response = await fetchWithTimeout(primaryUrl);
