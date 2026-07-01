@@ -115,5 +115,5 @@ const fetchFactData = async () => {
   }
 };
 
-//fetchWeatherData();
+fetchWeatherData();
 fetchFactData();
