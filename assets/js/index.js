@@ -48,10 +48,10 @@ const fetchWeatherData = async () => {
       throw new Error(`Primary endpoint failed with status ${response.status}`);
     }
     const data = await response.json();
-    const { englishName, countryCode, weatherText, temperature } = data;
+    const { locationName, countryCode, weatherText, temperature } = data;
     const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
     const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
-    const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
+    const weatherData = `${locationName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
     weatherDataElement.innerHTML = weatherData;
   } catch (error) {
     console.error(`fetchWeatherData -> Primary endpoint error: ${error.message}`);
@@ -59,10 +59,10 @@ const fetchWeatherData = async () => {
       let response = await fetchWithTimeout(fallbackUrl);
       if (response.status === 200) {
         const data = await response.json();
-        const { englishName, countryCode, weatherText, temperature } = data;
+        const { locationName, countryCode, weatherText, temperature } = data;
         const flagUrl = `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png`;
         const flagImage = `<img src="${flagUrl}" alt="${countryCode}" />`;
-        const weatherData = `${englishName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
+        const weatherData = `${locationName} - ${flagImage} <br /> ${weatherText} - ${temperature}`;
         weatherDataElement.innerHTML = weatherData;
       } else {
         const errorMessage = 'fetchWeatherData -> Fallback endpoint failed with status ' +
